@@ -1,0 +1,25 @@
+From 153fd56aaed7f84ce79d7794a9270945f5dbb5cb Mon Sep 17 00:00:00 2001
+From: Sergey Lapin <slapin@ossfans.org>
+Date: Tue, 4 Oct 2011 17:51:05 +0400
+Subject: [PATCH] Decreasing security (using /dev/urandom)
+
+---
+ libteredo/security.c |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/libteredo/security.c b/libteredo/security.c
+index a736cb9..85b3963 100644
+--- a/libteredo/security.c
++++ b/libteredo/security.c
+@@ -43,7 +43,7 @@
+ #if defined (__OpenBSD__) || defined (__OpenBSD_kernel__)
+ static const char randfile[] = "/dev/srandom";
+ #else
+-static const char randfile[] = "/dev/random";
++static const char randfile[] = "/dev/urandom";
+ #endif
+ 
+ 
+-- 
+1.7.5.4
+
